@@ -1,0 +1,11 @@
+<h1>Sign Up</h1>
+<% form_for @user do |u| %>
+  <div>
+    <p><%= u.label :name %></p>
+    <p><%= u.text_field :name %></p>
+  </div>
+  <div>
+    <p><%= u.label :password %></p>
+    <p><%= u.text_field :password %></p>
+  </div>
+<% end %>

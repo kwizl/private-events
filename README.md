@@ -1,24 +1,28 @@
-# README
+# PROJECT ASSOCIATIONS
+This is part of the Associations Project in The Odin Project’s Ruby on Rails Curriculum. Find it at 
+[Link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations#your-task)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
 
-Things you may want to cover:
+- Ruby on Rails
+- Sqlite3 (development)
+- Rubocop Linter
+- Stickler CI
 
-* Ruby version
+## Authors
 
-* System dependencies
+👤 **Martin Njoroge**
 
-* Configuration
+- Github: [@kwizl](https://github.com/kwizl)
+- Twitter: [@NjoroKaris](https://twitter.com/NjoroKaris)
+- Linkedin: [martin njoroge](https://www.linkedin.com/in/martin-njoroge-098774110/)
 
-* Database creation
+👤 **Abdel Omar Pérez Téllez**
 
-* Database initialization
+- Github: [abdelp](https://github.com/abdelp)
+- Twitter: [@abdelperez11](https://twitter.com/abdelperez11) 
+- Linkedin: [abdel-perez](https://www.linkedin.com/in/abdel-perez/)
 
-* How to run the test suite
+## Show your support
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Give a ⭐️ if you like this project!
