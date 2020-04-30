@@ -1,6 +1,7 @@
 class UserSessionsController < ApplicationController
   def create
     if find_user
+      session[:name] = params[:name]
       session[:id] = @current_user.id
 
       redirect_to(users_path, notice: 'Logged in successfully.')
