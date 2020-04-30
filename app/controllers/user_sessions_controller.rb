@@ -2,6 +2,8 @@ class UserSessionsController < ApplicationController
   def create
     if find_user
       session[:name] = params[:name]
+      session[:id] = @user.id
+
       redirect_to(users_path, notice: 'Logged in successfully.')
     else
       flash.now.alert = 'Login failed.'
@@ -17,6 +19,6 @@ class UserSessionsController < ApplicationController
   private
 
   def find_user
-    User.find_by(name: params[:name])
+    @user = User.find_by(name: params[:name])
   end
 end
