@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user_authenticated
+  before_action :user_authenticated, only: [:index, :show]
   include UserHelper
 
   def index
