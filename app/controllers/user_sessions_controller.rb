@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    logout
+    # logout
     redirect_to(:users, notice: 'Logged out!')
   end
 
