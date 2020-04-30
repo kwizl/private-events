@@ -3,3 +3,10 @@
   <%= @user.name %>
 </div>
 
+<div class="row">
+  <div class="container">
+    <% @user.events do |e| %>
+      <%= e.description %>
+    <% end %>
+  </div>
+</div>

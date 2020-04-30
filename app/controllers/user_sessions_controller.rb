@@ -1,8 +1,7 @@
 class UserSessionsController < ApplicationController
   def create
     if find_user
-      session[:name] = params[:name]
-      session[:id] = @user.id
+      session[:id] = @current_user.id
 
       redirect_to(users_path, notice: 'Logged in successfully.')
     else
@@ -13,12 +12,13 @@ class UserSessionsController < ApplicationController
 
   def destroy
     # logout
+    reset_session
     redirect_to(:users, notice: 'Logged out!')
   end
 
   private
 
   def find_user
-    @user = User.find_by(name: params[:name])
+    @current_user = User.find_by(session[:name])
   end
 end

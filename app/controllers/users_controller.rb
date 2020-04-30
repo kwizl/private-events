@@ -1,8 +1,15 @@
 class UsersController < ApplicationController
+  before_action :user_authenticated
   include UserHelper
 
   def index
-    @users = User.all
+    respond_to do |format|
+      if @current_user
+        @user = User.all
+      else
+        format.html { redirect_to root_path }
+      end
+    end
   end
 
   def new
