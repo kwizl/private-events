@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  def new; end
+
   def create
     if find_user
       session[:name] = params[:name]
@@ -20,6 +22,6 @@ class UserSessionsController < ApplicationController
   private
 
   def find_user
-    @current_user = User.find_by(session[:name])
+    @current_user = User.find_by(name: params[:name])
   end
 end

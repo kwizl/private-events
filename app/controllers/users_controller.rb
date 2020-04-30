@@ -3,13 +3,7 @@ class UsersController < ApplicationController
   include UserHelper
 
   def index
-    respond_to do |format|
-      if @current_user
-        @user = User.all
-      else
-        format.html { redirect_to root_path }
-      end
-    end
+    @users = User.all
   end
 
   def new
@@ -30,5 +24,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  private
+
+  def user_authenticated
+    redirect_to root_path unless session[:name]
   end
 end
