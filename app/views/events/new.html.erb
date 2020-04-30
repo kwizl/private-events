@@ -1,5 +1,5 @@
 <h1>Create Event</h1>
-<%= form_for @events do |e| %>
+<%= form_for [@user, @event] do |e| %>
   <div>
     <p><%= e.label :name %></p>
     <p><%= e.text_field :name %></p>

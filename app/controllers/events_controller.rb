@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  include EventHelper
   before_action :user_authenticated
-  
+  include EventsHelper
+
   def index
     @events = Event.all
   end
@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.build(event_params)
+    @event = current_user.events.build(event_params)
 
     respond_to do |format|
       if @event.save
@@ -23,12 +23,12 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = User.find(session[:id])
   end
 
   private
 
   def user_authenticated
-
+    redirect_to root_path unless session[:name]
   end
 end
