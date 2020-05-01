@@ -11,8 +11,14 @@
   </div>
 </div>
 
-<h2>Previously attended events</h2>
+<h2>Upcoming events</h2>
 
 <% @upcoming_events.each do |u| %>
+  <p><%= u.name %></p>
+<% end %>
+
+<h2>Previously events</h2>
+
+<% @previous_events.each do |u| %>
   <p><%= u.name %></p>
 <% end %>
