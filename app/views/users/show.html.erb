@@ -3,10 +3,16 @@
   <%= @user.name %>
 </div>
 
-<div class="row">
-  <div class="container">
-    <% @user.events do |e| %>
+<div class="container">
+  <div class="row">
+    <% @user.attended_events do |e| %>
       <%= e.description %>
     <% end %>
   </div>
 </div>
+
+<h2>Previously attended events</h2>
+
+<% @upcoming_events.each do |u| %>
+  <p><%= u.name %></p>
+<% end %>
