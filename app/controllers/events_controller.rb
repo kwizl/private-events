@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   include EventsHelper
 
   def index
-    @events = Event.all
+    @events = Event.select("events.*, users.id, users.name creator_name").joins(:creator)
   end
 
   def new
@@ -30,5 +30,9 @@ class EventsController < ApplicationController
 
   def user_authenticated
     redirect_to root_path unless session[:name]
+  end
+
+  def current_user
+    User.find(session[:id])
   end
 end
