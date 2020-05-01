@@ -23,9 +23,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event =  Event.find_by_sql('SELECT * FROM events WHERE id = ?', params[:id])
-    @attendees = User.find_by_sql('SELECT id, name FROM users u JOIN attendee_events e ON e.attendee_id = u.id WHERE event_id = ?', params[:id])
-    # @event = Event.joins(:attendee_events, :users).select('events.*, users.name, users.id').where(id: params[:id])
+    @event = Event.find(params[:id])
+    @attendees = User.find_by_sql(['SELECT u.id, u.name FROM users u JOIN attendee_events e ON e.user_id = u.id WHERE e.event_id = ?', params[:id]])
   end
 
   private
