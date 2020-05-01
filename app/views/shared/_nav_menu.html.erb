@@ -1,0 +1,13 @@
+<% if session[:name] %>
+  <header>
+    <ul class="nav justify-content-end">
+      <li class="nav-item"></li>
+      <li class="nav-item"><a href="">Create Event</a></li>
+      <% if session[:name] %>
+        <li class="nav-item"><%= link_to 'Logout', logout_path %></li>
+      <% else %>
+        <li class="nav-item"><a href="">Login</a></li>
+      <% end %>
+    </ul>
+  </header>
+<% end %>
