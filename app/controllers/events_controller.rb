@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build(event_params)
+    @event = current_user.created_events.build(event_params)
 
     respond_to do |format|
       if @event.save
@@ -23,7 +23,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = User.find(session[:id])
+    @event =  Event.find_by_sql('SELECT * FROM events WHERE id = ?', params[:id])
+    @attendees = User.find_by_sql('SELECT id, name FROM users u JOIN attendee_events e ON e.attendee_id = u.id WHERE event_id = ?', params[:id])
+    # @event = Event.joins(:attendee_events, :users).select('events.*, users.name, users.id').where(id: params[:id])
   end
 
   private
