@@ -6,4 +6,7 @@ RSpec.describe Event, type: :model do
     it { should have_many(:attendee_events).without_validating_presence }
     it { should have_many(:attendees).without_validating_presence }
   end
+  describe "Validation tests" do
+    
+  end
 end
