@@ -42,7 +42,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   # The RSpec testing framework
   gem 'rspec-rails'
-
+  gem 'rubocop-rails'
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara', '>= 2.15'
 
