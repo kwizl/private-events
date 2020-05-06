@@ -1,3 +1,30 @@
+<<<<<<< HEAD
+<div class="container">
+  <h1>Events</h1>
+    <div class="row">
+      <div class="col">Name</div>
+      <div class="col">Description</div>
+      <div class="col">Date</div>
+      <div class="col">Creator</div>
+    </div>
+    <% @events.each do |e| %>
+      <div class="row">
+        <div class="col">
+          <%= e.name %>
+        </div>
+        <div class="col">
+          <%= e.description %>
+        </div>
+        <div class="col">
+          <%= e.date %>
+        </div>
+        <div class="col">
+          <%= e.creator_name %>
+        </div>
+      </div>
+    <% end %>
+</div>
+=======
 <div class="border backgroundWhite">
   <div class="row">
         <div class="col-6">
@@ -32,3 +59,4 @@
     </tr>
   <% end %>
 </table>
+>>>>>>> ad0dadd095b1efc553356c40ff3562dda443b6b8

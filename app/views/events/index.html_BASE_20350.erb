@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Events</h1>
+  <div class="row">
+    <% @events.each do |e| %>
+      <div class="col">
+        <%= e.name %>
+      </div>
+      <div class="col">
+        <%= e.description %>
+      </div>
+      <div class="col">
+        <%= e.date %>
+      </div>
+      <div class="col">
+        <%= e.creator_name %>
+      </div>
+    <% end %>
+  </div>
+</div>
