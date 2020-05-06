@@ -1,8 +1,9 @@
 <% if session[:name] %>
   <div class="container">
-    <header>
+    <header class="d-flex justify-content-between">
       <ul class="nav justify-content-center">
         <li class="nav-item pr-3"><%= link_to 'Events', events_path %></li>
+        <li class="nav-item pr-3"><%= link_to 'Users', users_path %></li>
         <li class="nav-item pr-3"><%= link_to 'My Events', user_path(session[:id]) %></li>
       </ul>
       <ul class="nav justify-content-end">
