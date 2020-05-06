@@ -30,7 +30,7 @@ class EventsController < ApplicationController
   private
 
   def user_authenticated
-    redirect_to root_path unless session[:name]
+    redirect_to login_path unless session[:name]
   end
 
   def current_user
