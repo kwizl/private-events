@@ -16,17 +16,19 @@
       <th class="table-secondary">Creator</th>
   </tr>
   <% @events.each do |e| %>
-    <td class="col-2">
-      <%= e.name %>
-    </td>
-    <td class="col-6">
-      <%= e.description %>
-    </td>
-    <td class="col-2">
-      <%= e.date %>
-    </td>
-    <td class="col-2">
-      <%= e.creator_name %>
-    </td>
+    <tr>
+      <td class="col-2">
+        <%= e.name %>
+      </td>
+      <td class="col-6">
+        <%= e.description %>
+      </td>
+      <td class="col-2">
+        <%= e.date %>
+      </td>
+      <td class="col-2">
+        <%= e.creator_name %>
+      </td>
+    </tr>
   <% end %>
 </table>
