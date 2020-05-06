@@ -51,6 +51,7 @@ group :development, :test do
   gem 'webdrivers'
   gem 'factory_bot_rails', '~> 5.2'
   gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
+  gem 'rack_session_access', '~> 0.2.0'
 end
 
 group :development do
