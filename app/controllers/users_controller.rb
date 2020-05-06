@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user_authenticated, only: [:index, :show]
+  before_action :user_authenticated, only: %i[index show]
   include UserHelper
 
   def index
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
+
     respond_to do |format|
       if @user.save
         session[:name] = params[:name]

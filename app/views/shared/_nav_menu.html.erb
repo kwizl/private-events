@@ -7,7 +7,7 @@
       </ul>
       <ul class="nav justify-content-end">
         <li class="nav-item"></li>
-        <li class="nav-item"><a href="">Create Event</a></li>
+        <li class="nav-item"><%= link_to 'Create Event', new_event_path %></li>
         <% if session[:name] %>
           <li class="nav-item pl-3"><%= link_to 'Logout', logout_path %></li>
         <% else %>

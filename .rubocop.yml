@@ -10,7 +10,7 @@ AllCops:
 require: rubocop-rails
 
 Layout/LineLength:
-  Max: 120
+  Max: 150
 Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
