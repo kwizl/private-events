@@ -1,19 +1,32 @@
-<div class="container">
-  <h1>Events</h1>
+<div class="border backgroundWhite">
   <div class="row">
-    <% @events.each do |e| %>
-      <div class="col">
-        <%= e.name %>
-      </div>
-      <div class="col">
-        <%= e.description %>
-      </div>
-      <div class="col">
-        <%= e.date %>
-      </div>
-      <div class="col">
-        <%= e.creator_name %>
-      </div>
-    <% end %>
-  </div>
-</div>
+        <div class="col-6">
+            <h2 class="text-info">Event List</h2>
+        </div>
+    </div>
+    <br />
+<div>
+<table class="table table-striped border">
+  <tr>
+      <th class="table-secondary">
+          Name
+      </th>
+      <th class="table-secondary">Description</th>
+      <th class="table-secondary">Date</th>
+      <th class="table-secondary">Creator</th>
+  </tr>
+  <% @events.each do |e| %>
+    <td class="col">
+      <%= e.name %>
+    </td>
+    <td class="col">
+      <%= e.description %>
+    </td>
+    <td class="col">
+      <%= e.date %>
+    </td>
+    <td class="col">
+      <%= e.creator_name %>
+    </td>
+  <% end %>
+</table>
