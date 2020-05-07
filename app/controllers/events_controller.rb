@@ -25,6 +25,13 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @attendees = User.find_by_sql(['SELECT u.id, u.name FROM users u JOIN attendee_events e ON e.user_id = u.id WHERE e.event_id = ?', params[:id]])
+    current_user
+  end
+
+  def assist_event
+    current_user
+    @current_user.attended_events.create(@event)
+    redirect_to events_path
   end
 
   private
@@ -34,6 +41,6 @@ class EventsController < ApplicationController
   end
 
   def current_user
-    User.find(session[:id])
+    @current_user = User.find(session[:id])
   end
 end
