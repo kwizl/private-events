@@ -1,6 +1,8 @@
-<h1>Show</h1>
-<div>
-  <%= @user.name %>
+<div class="container mt-4">
+  <h2 class="text-info">Profile Page</h2>
+  <div>
+    <%= @user.name %>
+  </div>
 </div>
 
 <div class="container">
@@ -11,14 +13,72 @@
   </div>
 </div>
 
-<h2>Upcoming events</h2>
+<div class="container">
+  <h3 class="text-info">Upcoming events</h3>
 
-<% @upcoming_events.each do |u| %>
-  <p><%= u.name %></p>
-<% end %>
+  <table class="table table-striped border">
+    <tr>
+        <th class="table-secondary">
+            Name
+        </th>
+        <th class="table-secondary">Description</th>
+        <th class="table-secondary">Date</th>
+        <th class="table-secondary">Creator</th>
+        <th class="table-secondary"></th>
+    </tr>
+    <% @upcoming_events.each do |e| %>
+      <tr>
+        <td class="col-2">
+          <%= e.name %>
+        </td>
+        <td class="col-6">
+          <%= e.description %>
+        </td>
+        <td class="col-2">
+          <%= e.date %>
+        </td>
+        <td class="col-2">
+          <%= e.creator_name %>
+        </td>
+        <td class="col-2">
+          <%= link_to "view", e %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 
-<h2>Previously events</h2>
+<div class="container">
+  <h3 class="text-info">Previously events</h3>
 
-<% @previous_events.each do |u| %>
-  <p><%= u.name %></p>
-<% end %>
+  <table class="table table-striped border">
+    <tr>
+        <th class="table-secondary">
+            Name
+        </th>
+        <th class="table-secondary">Description</th>
+        <th class="table-secondary">Date</th>
+        <th class="table-secondary">Creator</th>
+        <th class="table-secondary"></th>
+    </tr>
+    <% @previous_events.each do |e| %>
+      <tr>
+        <td class="col-2">
+          <%= e.name %>
+        </td>
+        <td class="col-6">
+          <%= e.description %>
+        </td>
+        <td class="col-2">
+          <%= e.date %>
+        </td>
+        <td class="col-2">
+          <%= e.creator_name %>
+        </td>
+        <td class="col-2">
+          <%= link_to "view", e %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
