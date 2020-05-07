@@ -14,6 +14,7 @@
       <th class="table-secondary">Description</th>
       <th class="table-secondary">Date</th>
       <th class="table-secondary">Creator</th>
+      <th class="table-secondary"></th>
   </tr>
   <% @events.each do |e| %>
     <tr>
@@ -28,6 +29,9 @@
       </td>
       <td class="col-2">
         <%= e.creator_name %>
+      </td>
+      <td class="col-2">
+        <%= link_to "view", e %>
       </td>
     </tr>
   <% end %>

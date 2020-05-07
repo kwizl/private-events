@@ -1,21 +1,30 @@
-<h1>Event</h1>
+<h1 class="text-center text-primary">Event</h1>
+
 <div class="container">
   <div class="row">
-    <p>Name: <%= @event.name %></p>
+    <p><span class="font-weight-bold">Name:</span> <%= @event.name %></p>
   </div>
   <div class="row">
-    <p>Description: <%= @event.description %></p>
+    <p><span class="font-weight-bold">Description:</span> <%= @event.description %></p>
   </div>
   <div class="row">
-    <p>Date: <%= @event.date %></p>
+    <p><span class="font-weight-bold">Date:</span> <%= @event.date %></p>
   </div>
   <div class="row">
-    <p>Creator: <%= @event.creator.name %></p>
+    <p><span class="font-weight-bold">Creator:</span> <%= @event.creator.name %></p>
   </div>
+
+  <div class="row justify-content-center">
+    <%=link_to "Profile", assist_event_path(@current_user) %>
+  </div>
+
+  <h2 class="text-center text-primary m-4">Attendees</h2>
+
+  <% @attendees.each do |a| %>
+    <div class="row">
+      <p><%= a.name %></p>
+    </div>
+  <% end %>
 </div>
 
-<h2>Attendees</h2>
-  <% @attendees.each do |a| %>
-    <p><%= a.name %></p>
-  <% end %>
-</p>
+
