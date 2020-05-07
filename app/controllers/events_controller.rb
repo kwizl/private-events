@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  helper_method :current_user, :assist_event
   before_action :user_authenticated
   include EventsHelper
 
@@ -25,6 +26,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @attendees = User.find_by_sql(['SELECT u.id, u.name FROM users u JOIN attendee_events e ON e.user_id = u.id WHERE e.event_id = ?', params[:id]])
+    current_user
   end
 
   private
@@ -34,6 +36,6 @@ class EventsController < ApplicationController
   end
 
   def current_user
-    User.find(session[:id])
+    @current_user = User.find(session[:id])
   end
 end

@@ -15,7 +15,7 @@
   </div>
 
   <div class="row justify-content-center">
-    <%=link_to "Profile", assist_event_path(@current_user) %>
+    <%= button_to "Assist", assist_event_path(event_id: @event.id) %>
   </div>
 
   <h2 class="text-center text-primary m-4">Attendees</h2>
