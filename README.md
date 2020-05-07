@@ -20,6 +20,15 @@ This is part of the Associations Project in The Odin Project’s Ruby on Rails C
 
 ![login](/app/assets/images/sign_up.png)
 
+### Events List
+
+![login](/app/assets/images/events.png)
+
+### Create Event
+
+![login](/app/assets/images/create_event.png)
+
+
 ## Usage
 
 You can clone or download this repo (you need ruby installed in your computer).
