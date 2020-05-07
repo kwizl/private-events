@@ -15,7 +15,11 @@
   </div>
 
   <div class="row justify-content-center">
-    <%= button_to "Assist", assist_event_path(event_id: @event.id) %>
+    <% if !@current_user.attended_events.exists?(@event.id) %>
+      <%= button_to "Assist", assist_event_path(event_id: @event.id), {class: 'btn btn-primary'} %>
+    <% else %>
+      <%= button_to "Assist", assist_event_path(event_id: @event.id), {class: 'btn btn-secondary', disabled: true} %>
+    <% end %>
   </div>
 
   <h2 class="text-center text-primary m-4">Attendees</h2>

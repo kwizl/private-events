@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   include EventsHelper
 
   def index
-    @events = Event.select('events.*, users.id, users.name creator_name').joins(:creator)
+    @events = Event.select('events.*, users.id user_id, users.name creator_name').joins(:creator)
   end
 
   def new
