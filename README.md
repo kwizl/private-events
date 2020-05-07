@@ -16,12 +16,15 @@ This is part of the Associations Project in The Odin Project’s Ruby on Rails C
 
 ![login](/app/assets/images/login.png)
 
+### SignUp
+
+![login](/app/assets/images/sign_up.png)
 
 ## Usage
 
 You can clone or download this repo (you need ruby installed in your computer).
 
-    git clone git@github.com:sebGilR/private-events.git
+    git clone git@github.com:kwizl/private-events.git
 
 Move to the app directory
 
