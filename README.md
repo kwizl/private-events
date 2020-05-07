@@ -2,12 +2,34 @@
 This is part of the Associations Project in The Odin Project’s Ruby on Rails Curriculum. Find it at 
 [Link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations#your-task)
 
+
 ## Built With
 
 - Ruby on Rails
 - Sqlite3 (development)
 - Rubocop Linter
 - Stickler CI
+
+## Screenshots
+
+### Login
+
+![login](/app/assets/images/login.png)
+
+
+## Usage
+
+You can clone or download this repo (you need ruby installed in your computer).
+
+    git clone git@github.com:sebGilR/private-events.git
+
+Move to the app directory
+
+    cd private-events
+
+And run the next instruction to get the gems that are needed for this project
+    
+    bundle install
 
 ## Authors
 
