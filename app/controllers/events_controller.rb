@@ -2,7 +2,6 @@ class EventsController < ApplicationController
   include EventsHelper
   helper_method :current_user, :assist_event
   before_action :user_authenticated
-  # after_action lambda{|data| data.assist_event(:id)}, on: [:create]
 
   def index
     @events = Event.select('events.*, users.id user_id, users.name creator_name').joins(:creator)
@@ -32,17 +31,19 @@ class EventsController < ApplicationController
     current_user
   end
 
+  def assist_event
+    current_user
+    AttendeeEvent.create(user_id: @current_user.id, event_id: params[:event_id])
+    redirect_to event_url(id: params[:event_id])
+  end
+
   private
 
   def event_params
     params.require(:event).permit(:name, :description, :date, :user_id)
   end
-  
+
   def user_authenticated
     redirect_to login_path unless session[:name]
-  end
-
-  def current_user
-    @current_user = User.find(session[:id])
   end
 end

@@ -1,107 +1,17 @@
 <h2 class="text-primary text-center">Events List</h2>
-  <table class="table table-striped border">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Date</th>
-      <th scope="col">Creator</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @events.each do |e| %>
-      <tr scope="row">
-        <td>
-          <%= e.name %>
-        </td>
-        <td>
-          <%= e.description %>
-        </td>
-        <td>
-          <%= e.date %>
-        </td>
-        <td>
-          <%= e.creator_name %>
-        </td>
-        <td>
-          <%= link_to "view", e %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <div class="container">
-  <h3 class="text-info">Upcoming events</h3>
+  <div class="row">
+    <%= render partial: 'events', locals: {events: @events} %>
+  </div>
 
-  <table class="table table-striped border">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Date</th>
-        <th scope="col">Creator</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @upcoming_events.each do |e| %>
-      <tr scope="row">
-        <td>
-          <%= e.name %>
-        </td>
-        <td>
-          <%= e.description %>
-        </td>
-        <td>
-          <%= e.date %>
-        </td>
-        <td>
-          <%= e.creator_name %>
-        </td>
-        <td>
-          <%= link_to "view", e %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+  <div class="row">
+    <h3 class="text-info">Upcoming events</h3>
+    <%= render partial: 'events', locals: {events: @upcoming_events} %>
+  </div>
 
-<div class="container">
-  <h3 class="text-info">Previously events</h3>
-
-  <table class="table table-striped border">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Date</th>
-        <th scope="col">Creator</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @past_events.each do |e| %>
-        <tr scope="row">
-          <td>
-            <%= e.name %>
-          </td>
-          <td>
-            <%= e.description %>
-          </td>
-          <td>
-            <%= e.date %>
-          </td>
-          <td>
-            <%= e.creator_name %>
-          </td>
-          <td>
-            <%= link_to "view", e %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="row">
+    <h3 class="text-info">Previously events</h3>
+    <%= render partial: 'events', locals: {events: @past_events} %>
+  </div>
 </div>
