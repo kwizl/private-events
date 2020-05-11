@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
+  include EventsHelper
   helper_method :current_user, :assist_event
   before_action :user_authenticated
-  include EventsHelper
+  # after_action lambda{|data| data.assist_event(:id)}, on: [:create]
 
   def index
     @events = Event.select('events.*, users.id user_id, users.name creator_name').joins(:creator)
