@@ -34,6 +34,10 @@ class EventsController < ApplicationController
 
   private
 
+  def event_params
+    params.require(:event).permit(:name, :description, :date, :user_id)
+  end
+  
   def user_authenticated
     redirect_to login_path unless session[:name]
   end
