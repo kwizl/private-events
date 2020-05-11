@@ -14,104 +14,17 @@
 </div>
 
 <div class="container">
-  <h3 class="text-info">Created events</h3>
+  <div class="row">
+    <%= render partial: 'events/events', locals: {events: @events} %>
+  </div>
 
-  <table class="table table-striped border">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Date</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @user.created_events.each do |e| %>
-        <tr>
-          <td class="col-3">
-            <%= e.name %>
-          </td>
-          <td class="col-6">
-            <%= e.description %>
-          </td>
-          <td class="col-3">
-            <%= e.date %>
-          </td>
-          <td class="col-2">
-            <%= link_to "view", e %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+  <div class="row">
+    <h3 class="text-info">Upcoming events</h3>
+    <%= render partial: 'events/events', locals: {events: @upcoming_events} %>
+  </div>
 
-<div class="container">
-  <h3 class="text-info">Upcoming events</h3>
-
-  <table class="table table-striped border">
-    <tr>
-      <th class="table-secondary">
-          Name
-      </th>
-      <th class="table-secondary">Description</th>
-      <th class="table-secondary">Date</th>
-      <th class="table-secondary">Creator</th>
-      <th class="table-secondary"></th>
-    </tr>
-    <% @upcoming_events.each do |e| %>
-      <tr>
-        <td class="col-2">
-          <%= e.name %>
-        </td>
-        <td class="col-6">
-          <%= e.description %>
-        </td>
-        <td class="col-2">
-          <%= e.date %>
-        </td>
-        <td class="col-2">
-          <%= e.creator.name %>
-        </td>
-        <td class="col-2">
-          <%= link_to "view", e %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-</div>
-
-<div class="container">
-  <h3 class="text-info">Previously events</h3>
-
-  <table class="table table-striped border">
-    <tr>
-        <th class="table-secondary">
-            Name
-        </th>
-        <th class="table-secondary">Description</th>
-        <th class="table-secondary">Date</th>
-        <th class="table-secondary">Creator</th>
-        <th class="table-secondary"></th>
-    </tr>
-    <% @past_events.each do |e| %>
-      <tr>
-        <td class="col-2">
-          <%= e.name %>
-        </td>
-        <td class="col-6">
-          <%= e.description %>
-        </td>
-        <td class="col-2">
-          <%= e.date %>
-        </td>
-        <td class="col-2">
-          <%= e.creator.name %>
-        </td>
-        <td class="col-2">
-          <%= link_to "view", e %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
+  <div class="row">
+    <h3 class="text-info">Previously events</h3>
+    <%= render partial: 'events/events', locals: {events: @past_events} %>
+  </div>
 </div>
