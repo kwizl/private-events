@@ -3,5 +3,5 @@ class Event < ApplicationRecord
   has_many :attendee_events, dependent: :destroy
   has_many :attendees, through: :attendee_events, class_name: 'User', foreign_key: 'user_id'
   scope :upcoming_events, -> { where('date > ?', Time.zone.today.strftime('%Y-%m-%d')) }
-  scope :previous_events, -> { where('date <= ?', Time.zone.today.strftime('%Y-%m-%d')) }
+  scope :past_events, -> { where('date <= ?', Time.zone.today.strftime('%Y-%m-%d')) }
 end
