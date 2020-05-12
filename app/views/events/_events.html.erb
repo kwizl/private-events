@@ -9,14 +9,6 @@
       </tr>
     </thead>
     <tbody>
-      <% events.each do |e| %>
-        <tr scope="row">
-          <td><%= e.name %></td>
-          <td><%= e.description %></td>
-          <td><%= e.date %></td>
-          <td><%= e.creator.name %></td>
-          <td><%= link_to "view", e %></td>
-        </tr>
-      <% end %>
+      <%= events_list(events) %>
     </tbody>
   </table>

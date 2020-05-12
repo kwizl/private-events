@@ -20,11 +20,7 @@
 
   <h2 class="text-center text-primary m-4">Attendees</h2>
 
-  <% @attendees.each do |a| %>
-    <div class="row">
-      <p><%= a.name %></p>
-    </div>
-  <% end %>
+  <%= attendees_list(@attendees) %>
 </div>
 
 
