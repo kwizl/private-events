@@ -1,0 +1,26 @@
+<h1 class="text-center text-primary">Event</h1>
+
+<div class="container">
+  <div class="row">
+    <p><span class="font-weight-bold">Name:</span> <%= @event.name %></p>
+  </div>
+  <div class="row">
+    <p><span class="font-weight-bold">Description:</span> <%= @event.description %></p>
+  </div>
+  <div class="row">
+    <p><span class="font-weight-bold">Date:</span> <%= @event.date %></p>
+  </div>
+  <div class="row">
+    <p><span class="font-weight-bold">Creator:</span> <%= @event.creator.name %></p>
+  </div>
+
+  <div class="row justify-content-center">
+    <%= assist(@event.id) %>
+  </div>
+
+  <h2 class="text-center text-primary m-4">Attendees</h2>
+
+  <%= attendees_list(@attendees) %>
+</div>
+
+

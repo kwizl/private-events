@@ -1,0 +1,17 @@
+<h2 class="text-primary text-center">Events List</h2>
+
+<div class="container">
+  <div class="row">
+    <%= render partial: 'events', locals: {events: @events} %>
+  </div>
+
+  <div class="row">
+    <h3 class="text-info">Upcoming events</h3>
+    <%= render partial: 'events', locals: {events: @upcoming_events} %>
+  </div>
+
+  <div class="row">
+    <h3 class="text-info">Previously events</h3>
+    <%= render partial: 'events', locals: {events: @past_events} %>
+  </div>
+</div>
