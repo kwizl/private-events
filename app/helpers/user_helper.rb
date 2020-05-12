@@ -6,7 +6,7 @@ module UserHelper
           <tr scope="row">
           <td>#{u.name}</td>
           </tr>
-            HTML
+      HTML
     end
     html.html_safe
   end
