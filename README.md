@@ -1,5 +1,5 @@
 # PROJECT ASSOCIATIONS
-This is part of the Associations Project in The Odin Project’s Ruby on Rails Curriculum. Find it at 
+It is part of the Associations Project in The Odin Project’s Ruby on Rails Curriculum. Find it at 
 [Link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations#your-task)
 
 
@@ -31,15 +31,15 @@ This is part of the Associations Project in The Odin Project’s Ruby on Rails C
 
 ## Usage
 
-You can clone or download this repo (you need ruby installed in your computer).
+You can clone or download this repo (you need ruby installed on your computer).
 
     git clone git@github.com:kwizl/private-events.git
 
-Move to the app directory
+Navigate inside the application directory
 
     cd private-events
 
-And run the next instruction to get the gems that are needed for this project
+And run the next instruction to install the required gems.
     
     bundle install
 
@@ -56,7 +56,3 @@ And run the next instruction to get the gems that are needed for this project
 - Github: [abdelp](https://github.com/abdelp)
 - Twitter: [@abdelperez11](https://twitter.com/abdelperez11) 
 - Linkedin: [abdel-perez](https://www.linkedin.com/in/abdel-perez/)
-
-## Show your support
-
-Give a ⭐️ if you like this project!
